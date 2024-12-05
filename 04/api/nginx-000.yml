@@ -1,0 +1,13 @@
+---
+# 실습 - 잘못된 apiVersion 지정한 경우 
+kind: Pod
+apiVersion: v1
+metadata:
+  name: web   ## metadata에는 최소한 pod name을 정해줘야한다.
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+          protocol: TCP #(생략가능 default protocol = tcp)

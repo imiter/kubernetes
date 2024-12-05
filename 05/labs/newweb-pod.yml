@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: newweb
+  namespace: prodns
+spec:
+  containers:
+  - name: newweb-container
+    image: ovelyday11/mynginx
+    ports:
+    -  containerPort: 80
+    resources:
+      requests:
+        cpu: 200m
+        memory: 500Mi
+      limits:
+        cpu: '1'
+        memory: 1Gi
+    env:
+    - name: DB
+      value: "mydb"
